@@ -9,7 +9,7 @@
 
     <!-- Embedded Style Sheet -->
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
         }
@@ -23,19 +23,20 @@
     <!-- Start JavaScript Implementation for Digital Clock -->
     <script>
         const StartTime = () => {
-            setTimeout(() => {
-                const today = new Date();
-                let h = today.getHours();
-                let m = today.getMinutes();
-                let s = today.getSeconds();
-                h = h > 12 ? h - 12 : h;
-                document.getElementById('txt').innerHTML = checkTime(h) + ":" + checkTime(m) + ':' + checkTime(s);
-            },"500");
+            setTimeout(StartTime, 500)
+            const today = new Date();
+            let h = today.getHours();
+            let m = today.getMinutes();
+            let s = today.getSeconds();
+            h = h > 12 ? h - 12 : h;
+            document.getElementById('txt').innerHTML = checkTime(h) + ":" + checkTime(m) + ':' + checkTime(s);
         }
+
         const checkTime = (i) => {
-            i < 10 ? "0" + i : i;
+            const ET = i < 10 ? "0" + i : i;
+            return ET
         }
     </script>
 </body>
-
+<!-- (h<10?("0"+h):h)+":" + (m<10?("0"+m):m) + ':' +(s<10?("0"+s):s) -->
 </html>
