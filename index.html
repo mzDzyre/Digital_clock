@@ -13,23 +13,55 @@
             margin: 0;
             padding: 0;
         }
+
+        .container {
+            height: 100vh;
+            width: 100vw;
+            background-color: blue;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .innerContainer {
+            padding: 15px;
+            background-color: white;
+            border-radius: 20px;
+            border: 2px solid black;
+
+        }
     </style>
 </head>
 
 <body onload="StartTime()">
-    <h2>Digital Clock</h2>
-    <div id="txt"></div>
+    <div class="container">
+        <div class="innerContainer">
+            <h1>Digital Clock</h1>
+            <h2>
+                <div id="txt"></div>
+            </h2>
+        </div>
+    </div>
 
     <!-- Start JavaScript Implementation for Digital Clock -->
     <script>
         const StartTime = () => {
             setTimeout(StartTime, 500)
             const today = new Date();
+            let checkH = today.getHours();
+            console.log(checkH)
             let h = today.getHours();
             let m = today.getMinutes();
             let s = today.getSeconds();
             h = h > 12 ? h - 12 : h;
-            document.getElementById('txt').innerHTML = checkTime(h) + ":" + checkTime(m) + ':' + checkTime(s);
+            if (checkH >= 0 && checkH < 12) {
+                document.getElementById('txt').innerHTML = checkTime(h) + ":" + checkTime(m) + ':' + checkTime(s) + " AM";
+            }
+            else {
+                document.getElementById('txt').innerHTML = checkTime(h) + ":" + checkTime(m) + ':' + checkTime(s) + "  PM";
+
+            }
         }
 
         const checkTime = (i) => {
