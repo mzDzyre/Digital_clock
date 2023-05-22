@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
     <title>Digital Clock</title>
 
     <!-- Embedded Style Sheet -->
@@ -17,7 +22,7 @@
         .container {
             height: 100vh;
             width: 100vw;
-            background-color: blue;
+            background-color: black;
             display: flex;
             text-align: center;
             justify-content: center;
@@ -25,11 +30,16 @@
         }
 
         .innerContainer {
-            padding: 15px;
-            background-color: white;
-            border-radius: 20px;
-            border: 2px solid black;
+            padding: 15px 30px;
+            border: 2px solid white;
+            font-size: 3rem;
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            cursor: pointer;
+        }
 
+        .innerContainer:hover {
+            box-shadow: 0 0 20px blueviolet, 0 0 40px violet, 0 0 10px blue;
         }
     </style>
 </head>
@@ -37,10 +47,9 @@
 <body onload="StartTime()">
     <div class="container">
         <div class="innerContainer">
-            <h1>Digital Clock</h1>
-            <h2>
-                <div id="txt"></div>
-            </h2>
+            <p>
+            <div id="txt"></div>
+            </p>
         </div>
     </div>
 
